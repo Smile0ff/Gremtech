@@ -1,0 +1,68 @@
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/*  labels start                              */
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+*[class^="label"]{
+    position: relative;
+    overflow: hidden;
+    &:before,
+    &:after{
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        content: "";
+        overflow: hidden;
+    }
+    &:after{
+        top: auto;
+        bottom: 0;
+    }
+    & > span{
+        display: block;
+        width: 100%;
+        position: absolute;
+        left: 0;
+        text-align: center;
+        overflow: hidden;
+    }
+}
+.label-large{
+    width: 220px;
+    height: 30px;
+    &:before,
+    &:after{
+        width: 213px;
+    }
+    & > span{
+        height: 16px;
+        top: 7px;
+        line-height: 16px;
+    }
+    &.white{
+        &:before{ .border-tl(7px, @white); }
+        &:after{ .border-br(7px, @white); }
+        & > span{
+            background: fade(@white, 50%);
+            color: @white; 
+        }
+    }
+    &.black{
+        &:before{ .border-tl(7px, @black); }
+        &:after{ .border-br(7px, @black); }
+        & > span{
+            background: fade(@black, 50%);
+            color: @gold; 
+        }
+    }
+    &.gold{
+        &:before{ .border-tl(7px, @gold); }
+        &:after{ .border-br(7px, @gold); }
+        & > span{
+            background: fade(@gold, 50%);
+            color: @white; 
+        }
+    }
+}
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/*  labels end                                */
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
