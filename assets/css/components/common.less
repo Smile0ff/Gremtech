@@ -1,0 +1,133 @@
+@import "reset.less";
+@import "settings.less";
+@import "icons.less";
+@import "buttons.less";
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/*  layout start                              */
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+#page,
+#content,
+.outer,
+.inner{
+    width: 100%;
+    height: auto;
+}
+
+html,
+body,
+#page,
+#content{
+    height: 100%;
+    min-height: 100%;
+}
+
+.inner{
+    max-width: 1200px;
+    margin: 0 auto;
+}
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/*  layout end                                */
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/*  header start  			                  */
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+#header{
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    overflow: hidden;
+    .logo{
+        width: 120px;
+        height: auto;
+        float: left;
+        margin: 80px 0px 0px 80px;
+        overflow: hidden;
+    }
+    .contacts-holder{
+        width: 220px;
+        float: right;
+        margin: 80px 80px 0 0;
+        overflow: hidden;
+        .label-large{
+            &:last-child{
+                margin-top: 10px;
+            }
+        }
+    }
+}
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/*  header end                			      */
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/*  labels start                              */
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+*[class^="label"]{
+    position: relative;
+    overflow: hidden;
+    &:before,
+    &:after{
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        content: "";
+        overflow: hidden;
+    }
+    &:after{
+        top: auto;
+        bottom: 0;
+    }
+    & > span{
+        display: block;
+        width: 100%;
+        position: absolute;
+        left: 0;
+        text-align: center;
+        overflow: hidden;
+    }
+}
+.label-large{
+    width: 220px;
+    height: 30px;
+    &:before,
+    &:after{
+        width: 213px;
+    }
+    & > span{
+        height: 16px;
+        top: 7px;
+        line-height: 16px;
+    }
+    &.white{
+        &:before{ .border-tl(7px, @white); }
+        &:after{ .border-br(7px, @white); }
+        & > span{
+            background: fade(@white, 50%);
+            color: @white; 
+        }
+    }
+    &.black{
+        &:before{ .border-tl(7px, @black); }
+        &:after{ .border-br(7px, @black); }
+        & > span{
+            background: fade(@black, 50%);
+            color: @gold; 
+        }
+    }
+    &.gold{
+        &:before{ .border-tl(7px, @gold); }
+        &:after{ .border-br(7px, @gold); }
+        & > span{
+            background: fade(@gold, 50%);
+            color: @white; 
+        }
+    }
+}
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/*  labels end                                */
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+

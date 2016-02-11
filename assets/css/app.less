@@ -1,0 +1,111 @@
+@import "components/common.less";
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/*  layout start                              */
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/*  layout end                                */
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/*  hero start                                */
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+.hero-holder{
+    height: 100%;
+    position: relative;
+    background: url("@{images}hero-bg.jpg") no-repeat 50% 50%;
+    background-size: cover;
+    overflow: hidden;
+    .inner{
+        max-width: 100%;
+        position: absolute;
+        top: 50%;
+        left: 0;
+        margin: 0;
+        transform: translateY(-50%);
+        backface-visibility: hidden;
+        .hero-title{
+            text-transform: uppercase;
+            text-align: center;
+            color: @white;
+            line-height: 100%;
+        }
+        .hero-upper-title,
+        .hero-bottom-title{
+            font-weight: 300;
+            font-size: 1.125em;
+        }
+        .hero-upper-title{
+            display: block;
+        }
+        .hero-middle-title{
+            margin: 40px 0 0;
+        }
+        .btn-large{
+            margin: 80px auto 0;
+        }
+    }
+    .social-holder{
+        width: 60px;
+        height: auto;
+        position: absolute;
+        left: 80px;
+        bottom: 80px;
+        overflow: hidden;
+        .btn-square{
+            a.icon{
+                font-size: 1.5em;
+                &:before{ vertical-align: middle; }
+            }
+            &:last-child{
+                margin-top: 10px;
+            }
+        }
+    }
+    .deco-corner{
+        width: 80px;
+        height: 80px;
+        position: absolute;
+        right: 80px;
+        bottom: 80px;
+        overflow: hidden;
+        &:before,
+        &:after{
+            display: block;
+            width: 60px;
+            height: 2px;
+            position: absolute;
+            top: 0;
+            left: 20px;
+            content: "";
+            background: @white;
+            overflow: hidden;
+        }
+        &:before{
+            transform-origin: 100% 100%;
+            transform: rotate(-90deg);
+        }
+        &:after{
+            top: auto;
+            left: 0;
+            bottom: 0;
+        }
+    }
+    .coming-soon-holder{
+        width: 100%;
+        position: absolute;
+        left: 0;
+        bottom: 80px;
+        overflow: hidden;
+        p{
+            font-size: 1.5em;
+            text-align: center;
+            font-weight: 300;
+            color: @white;
+            text-transform: uppercase;
+        }
+    }
+}
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/*  hero end                                  */
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
