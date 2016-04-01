@@ -10,7 +10,7 @@ var gulp = require("gulp"),
 
 gulp.task("js", function(){
 
-    var fileList = glob.sync(cfg.js + "/app.js"),
+    var fileList = glob.sync(cfg.js + "/*.js"),
         fileName, bundle;
 
     fileList.map(function(entry){
@@ -38,7 +38,6 @@ gulp.task("css", function(){
 });
 
 gulp.task("fonts", function(){
-
     gulp.src(cfg.fonts +"/**/*.*").pipe(gulp.dest(cfg.out +"/fonts/"));
 });
 

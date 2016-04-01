@@ -1,8 +1,6 @@
 @import "reset.less";
 @import "settings.less";
 @import "icons.less";
-@import "buttons.less";
-@import "labels.less";
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 /*  layout start                              */
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
@@ -21,10 +19,12 @@ body,
     height: 100%;
     min-height: 100%;
 }
-
-.inner{
-    max-width: 1200px;
-    margin: 0 auto;
+#page{ position: relative; }
+body{
+    overflow: hidden;
+    &.__loaded{
+        overflow: visible;
+    }
 }
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 /*  layout end                                */
@@ -42,23 +42,138 @@ body,
     overflow: hidden;
     .logo{
         width: 120px;
-        height: auto;
+        margin: 80px 0 0 80px;
         float: left;
-        margin: 80px 0px 0px 80px;
         overflow: hidden;
-    }
-    .contacts-holder{
-        width: 220px;
-        float: right;
-        margin: 80px 80px 0 0;
-        overflow: hidden;
-        .label-large{
-            &:last-child{
-                margin-top: 10px;
-            }
+        a{
+            display: block;
+            width: 120px;
+            height: 82px;
+            position: relative;
+        }
+        svg{
+            position: absolute;
+            top: 0;
+            left: 0;
         }
     }
 }
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 /*  header end                			      */
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/*  buttons & labels start                    */
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+*[class^="btn"],
+*[class^="label"]{
+    position: relative;
+    & > svg{
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+}
+.btn{
+    width: 200px;
+    height: 50px;
+    margin: 40px;
+    .rect-large{
+        fill: fade(@black, 40%);
+        transition: all .5s ease 0s;
+    }
+    &:hover .rect-large{
+        fill: fade(@gold, 40%);
+    }
+}
+.btn-squared{
+    width: 60px;
+    height: 60px;
+    margin: 40px;
+    &.small{
+        width: 40px;
+        height: 40px;
+    }
+    .square{
+        fill: fade(@black, 40%);
+        transition: all .5s ease 0s;
+    }
+    &:hover .square{
+        fill: fade(@gold, 40%);
+    }
+}
+.label{
+    width: 300px;
+    height: 45px;
+    margin: 40px;
+    .rect{
+        fill: fade(@black, 40%);
+        transition: all .5s ease;
+    }
+    &:hover .rect{
+        fill: fade(@gold, 40%);
+    }
+}
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/*  buttons & labels end                      */
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/*  preloader start                           */
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+#preloader-holder{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    background: @black;
+    opacity: 1;
+    transition: all 1s @easing 1s;
+    visibility: visible;
+    overflow: hidden;
+    .loader{
+        width: 252px;
+        height: 176px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin: -88px 0 0 -126px;
+         opacity: 1;
+         transition: all .5s @easing .5s;
+        .logo-part{
+            fill: transparent;
+            stroke-width: .25px;
+            stroke: @gold;
+            stroke-dasharray: 800px 800px;
+            stroke-dashoffset: 800px;
+            animation: dashFill 3s @easing 0s 1 forwards;
+        }
+    }
+}
+.__loaded #preloader-holder{
+    opacity: 0;
+    visibility: hidden;
+    .loader{
+        opacity: 0;
+    }
+}
+
+@keyframes dashFill{
+    0% {
+        stroke-dashoffset: 800px;
+        fill: transparent;
+    }
+    60% {
+        fill: transparent;
+    }
+    100% {
+        stroke-dashoffset: 0px;
+        fill: @gold;
+    }
+}
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/*  preloader end                             */
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+

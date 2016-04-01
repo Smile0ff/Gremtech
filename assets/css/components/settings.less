@@ -13,15 +13,15 @@
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 /*  system variables start                    */
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
-@white: #ededed;
+@white: #fbfbfb;
 @black: #0c0c0c;
 @gold: #c98e2d;
 
-@images: "../images/";
+@images: "../images";
 @Roboto: "Roboto", sans-serif;
 @AgencyFB: "AgencyFB", sans-serif;
 
-@easing: ;
+@easing: cubic-bezier(0.83, 0.22, 1, 1.03);
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 /*  system variables end                      */
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
@@ -52,22 +52,7 @@ a{ text-decoration: none; }
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 /*  mixins start                              */
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
-.border-tl(@bevel: 15px; @color: @white; @opacity: 50%){
-    border-bottom: @bevel solid fade(@color, @opacity);
-    border-left: @bevel solid transparent;
-}
-.border-tr(@bevel: 15px; @color: @white; @opacity: 50%){
-    border-bottom: @bevel solid fade(@color, @opacity);
-    border-right: @bevel solid transparent;
-}
-.border-br(@bevel: 15px; @color: @white; @opacity: 50%){
-    border-top: @bevel solid fade(@color, @opacity);
-    border-right: @bevel solid transparent;
-}
-.border-bl(@bevel: 15px; @color: @white; @opacity: 50%){
-    border-top: @bevel solid fade(@color, @opacity);
-    border-left: @bevel solid transparent;
-}
+
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 /*  mixins end                                */
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
@@ -93,13 +78,10 @@ img{
     height: auto;
     overflow: hidden;
 }
-
-.icon{
-    font-size: 1.5em;
-    &:before{
-        display: inline-block;
-        vertical-align: top;
-    }
+svg{
+    position: absolute;
+    top: 0;
+    left: 0;
 }
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 /*  helpers end                               */
