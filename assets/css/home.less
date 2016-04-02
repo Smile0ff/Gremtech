@@ -18,10 +18,118 @@
         position: absolute;
         top: 50%;
         left: 0;
+        padding: 0;
         transform: translateY(-50%);
         backface-visibility: hidden;
+        .upper-title{
+            display: block;
+            margin-bottom: 20px;
+            text-align: center;
+            font-size: 1.125em;
+            font-weight: 300;
+            text-transform: uppercase;
+            color: @white;
+        }
+        h1{
+            text-align: center;
+            color: @white;
+            line-height: 130px;
+        }
+        p{
+            text-align: center;
+            color: @white;
+            font-weight: 300;
+            text-transform: uppercase;
+        }
+    }
+    & > .corner{
+        position: absolute;
+        right: 80px;
+        bottom: 80px;
+        .lane{
+            height: 2px;
+            background: @white;
+        }
+    }
+    .arrow-holder{
+        width: 18px;
+        height: 12px;
+        position: absolute;
+        left: 50%;
+        bottom: 80px;
+        margin-left: -9px;
+        .arrow-down{
+            position: absolute;
+            top: 0;
+            left: 0;
+            border-left: 9px solid transparent;
+            border-right: 9px solid transparent;
+            border-top: 12px solid @white;
+        }
     }
 }
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 /*  hero intro end                            */
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/*  about start                               */
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+.about-holder{
+    .inner{
+        margin-bottom: 1000px;
+        .info-holder{
+            width: 100%;
+            height: auto;
+            position: relative;
+            .info{
+                width: 50%;
+                position: relative;
+                .corner{
+                    position: absolute;
+                    &.corner-tl{
+                        top: -40px;
+                        left: 0;
+                    }
+                    &.corner-br{
+                        right: 0;
+                        bottom: 0;
+                    }
+                }
+                .label{
+                    margin: 40px 0 40px -80px;
+                    span{ color: @gold; }
+                    svg > polygon{
+                        fill: @black;
+                    }
+                }
+                h2, p{
+                    padding: 0 80px;
+                    text-align: left;
+                }
+                h2{
+                    font-size: 2.25em;
+                    font-weight: 700;
+                    text-transform: uppercase;
+                    padding-bottom: 40px;
+                }
+                p{
+                    padding-bottom: 20px;
+                    &:last-child{
+                        padding-bottom: 80px;
+                    }
+                }
+            }
+            .numbers-holder{
+                position: absolute;
+                top: 50%;
+                right: 0;
+                transform: translateY(-50%);
+                backface-visibility: hidden;
+            }
+        }
+    }
+}
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/*  about end                                 */
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
