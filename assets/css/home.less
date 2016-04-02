@@ -20,7 +20,6 @@
         left: 0;
         padding: 0;
         transform: translateY(-50%);
-        backface-visibility: hidden;
         .upper-title{
             display: block;
             margin-bottom: 20px;
@@ -48,7 +47,7 @@
         bottom: 80px;
         .lane{
             height: 2px;
-            background: @white;
+            &:before{ background: @white; }
         }
     }
     .arrow-holder{
@@ -77,7 +76,6 @@
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 .about-holder{
     .inner{
-        margin-bottom: 1000px;
         .info-holder{
             width: 100%;
             height: auto;
@@ -95,17 +93,34 @@
                         right: 0;
                         bottom: 0;
                     }
+                    .lane{
+                        &:before{
+                            transition: all .5s @easing;
+                            transform: translateX(-100%);
+                        }
+                    }
                 }
                 .label{
                     margin: 40px 0 40px -80px;
-                    span{ color: @gold; }
+                    span{
+                        color: @gold;
+                        opacity: 0;
+                        transition: all .5s @easing .5s;
+                    }
                     svg > polygon{
-                        fill: @black;
+                        fill: transparent;
+                        stroke-width: 1px;
+                        stroke: @black;
+                        stroke-dasharray: 720px;
+                        stroke-dashoffset: 720px;
+                        transition: stroke-dashoffset .5s @easing 0s, fill .5s @easing .5s;
                     }
                 }
                 h2, p{
                     padding: 0 80px;
                     text-align: left;
+                    opacity: 0;
+                    transition: all .5s @easing;
                 }
                 h2{
                     font-size: 2.25em;
@@ -127,9 +142,170 @@
                 transform: translateY(-50%);
                 backface-visibility: hidden;
             }
+            &.active{
+                .info{
+                    .corner{
+                        .lane{
+                            &:before{
+                                transform: translateX(0%);
+                            }
+                        }
+                    }
+                    .label{
+                        span{ opacity: 1; }
+                        svg > polygon{
+                            fill: @black;
+                            stroke-dashoffset: 0px;
+                        }
+                    }
+                    h2, p{
+                        opacity: 1;
+                    }
+                }
+            }   
         }
     }
 }
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 /*  about end                                 */
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/*  services start                            */
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+.services-holder{
+    .bg-title-holder{
+        span{ text-align: right; }
+    }
+    .inner{
+        padding-bottom: 80px;
+        .desc-holder{
+            max-width: 400px;
+            .upperline{
+                display: block;
+                width: 40px;
+                height: 2px;
+                margin-bottom: 20px;
+                background: @black;
+            }
+        }
+        .list-holder{
+            display: block;
+            width: 100%;
+            margin: 100px 0 80px;
+            li{
+                display: block;
+                width: 100%;
+                height: 88px;
+                position: relative;
+                &:before,
+                &:after{
+                    display: block;
+                    width: 0%;
+                    height: 4px;
+                    position: absolute;
+                    left: 0;
+                    bottom: 0;
+                    content: "";
+                    background: @black;
+                    transition: all 1s @easing;
+                    overflow: hidden;
+                }
+                &:before{ display: none; }
+                &:first-child{
+                    &:before{
+                        display: block;
+                        bottom: auto;
+                        top: 0;
+                    }
+                }
+                .num-holder{
+                    position: absolute;
+                    top: -20px;
+                    left: 40px;
+                    span{
+                        opacity: 0;
+                        transition: all .5s @easing .5s;
+                    }
+                    svg > polygon{
+                        fill: transparent;
+                        stroke-width: 1px;
+                        stroke: @black;
+                        stroke-dasharray: 240px;
+                        stroke-dashoffset: 240px;
+                        transition: stroke-dashoffset .5s @easing 0s, fill .5s @easing .5s;
+                    }
+                }
+                p{
+                    font-size: 1.125em;
+                    text-align: left;
+                    padding: 0 120px;
+                    line-height: 88px;
+                    text-transform: uppercase;
+                    span{
+                        display: inline-block;
+                        padding: 0 20px;
+                        font-size: inherit;
+                        font-weight: inherit;
+                        position: relative;
+                        &:before{
+                            display: block;
+                            width: 0%;
+                            height: 4px;
+                            position: absolute;
+                            left: 0;
+                            bottom: 0;
+                            z-index: 10;
+                            content: "";
+                            background: @gold;
+                            transition: all .5s @easing .4s;
+                            overflow: hidden;
+                        }
+                    }
+                }
+                &.active{
+                    &:before,
+                    &:after{
+                        width: 100%;
+                    }
+                    .num-holder{
+                        span{ opacity: 1; }
+                        svg > polygon{
+                            fill: @black;
+                            stroke-dashoffset: 0;
+                        }
+                    }
+                    p{
+                        span:before{
+                            width: 100%;
+                        }
+                    }
+                }
+            }
+        }
+        .btn{
+            margin: 0 auto;
+            svg > polygon{
+                fill: @black;
+            }
+            &:hover{
+                svg > polygon{
+                    fill: @gold;
+                }
+            }
+        }
+    }
+}
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/*  services end                              */
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/*  projects start                            */
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+.projects-holder{
+
+}
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/*  projects end                              */
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/

@@ -21,7 +21,7 @@ body,
 }
 #page{ position: relative; }
 .inner{
-    padding: 220px 240px 0;
+    padding: 212px 240px 0;
     z-index: 10;
     box-sizing: border-box;
     overflow: hidden;
@@ -216,6 +216,19 @@ body,
 .btn{
     width: 200px;
     height: 50px;
+    & > span,
+    & > a{
+        display: block;
+        width: 100%;
+        height: 100%;
+        font-size: 1em;
+        text-align: center;
+        line-height: 50px;
+        font-weight: 300;
+        color: @white;
+        text-transform: uppercase;
+        overflow: hidden;
+    }
     svg > polygon{
         fill: @gray;
         transition: all .25s @easing;
@@ -271,6 +284,17 @@ body,
     &.label-small{
         width: 220px;
     }
+    &.label-squared{
+        width: 40px;
+        height: 40px;
+        span{
+            color: @gold;
+            line-height: 40px;
+        }
+        svg > polygon{
+            fill: @black;
+        }
+    }
 }
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 /*  buttons & labels end                      */
@@ -288,7 +312,18 @@ body,
         width: 100%;
         height: 4px;
         position: absolute;
-        background: @black;
+        background: transparent;
+        overflow: hidden;
+        &:before{
+            display: block;
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            content: "";
+            background: @black;
+        }
     }
     &.corner-br{
         .lane{
