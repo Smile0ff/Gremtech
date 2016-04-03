@@ -80,6 +80,7 @@
             width: 100%;
             height: auto;
             position: relative;
+            margin-bottom: 80px;
             .info{
                 width: 50%;
                 position: relative;
@@ -192,17 +193,16 @@
         .list-holder{
             display: block;
             width: 100%;
-            margin: 100px 0 80px;
+            margin: 80px 0;
             li{
                 display: block;
                 width: 100%;
-                height: 88px;
+                height: 80px;
                 position: relative;
-                &:before,
                 &:after{
                     display: block;
                     width: 0%;
-                    height: 4px;
+                    height: 2px;
                     position: absolute;
                     left: 0;
                     bottom: 0;
@@ -211,19 +211,15 @@
                     transition: all 1s @easing;
                     overflow: hidden;
                 }
-                &:before{ display: none; }
-                &:first-child{
-                    &:before{
-                        display: block;
-                        bottom: auto;
-                        top: 0;
-                    }
-                }
                 .num-holder{
+                    width: 30px;
+                    height: 30px;
                     position: absolute;
-                    top: -20px;
-                    left: 40px;
+                    top: 25px;
+                    left: 25px;
                     span{
+                        font-size: .875em;
+                        line-height: 30px;
                         opacity: 0;
                         transition: all .5s @easing .5s;
                     }
@@ -239,8 +235,8 @@
                 p{
                     font-size: 1.125em;
                     text-align: left;
-                    padding: 0 120px;
-                    line-height: 88px;
+                    padding: 0 80px;
+                    line-height: 80px;
                     text-transform: uppercase;
                     span{
                         display: inline-block;
@@ -251,7 +247,7 @@
                         &:before{
                             display: block;
                             width: 0%;
-                            height: 4px;
+                            height: 2px;
                             position: absolute;
                             left: 0;
                             bottom: 0;
@@ -304,8 +300,220 @@
 /*  projects start                            */
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 .projects-holder{
-
+    .inner{
+        .item-holder{
+            position: relative;
+            margin-bottom: 200px;
+            .info-holder{
+                width: 50%;
+                position: relative;
+                .corner.corner-tl{
+                    position: absolute;
+                    top: -40px;
+                    left: 0;
+                    .lane{
+                        background: transparent;
+                        &:before{
+                            display: block;
+                            width: 100%;
+                            height: 100%;
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                            content: "";
+                            background: @black;
+                            transform: translateX(-100%);
+                            transition: all .5s @easing 0s;
+                        }
+                    }
+                }
+                .label{
+                    margin: 0 0 40px -80px;
+                    span{
+                        color: @gold;
+                        opacity: 0;
+                        transition: all .5s @easing .5s;
+                    }
+                    svg > polygon{
+                        fill: transparent;
+                        stroke-width: 1px;
+                        stroke: @black;
+                        stroke-dasharray: 720px;
+                        stroke-dashoffset: 720px;
+                        transition: stroke-dashoffset .5s @easing 0s, fill .5s @easing .5s;
+                    }
+                    &.label-squared{
+                        position: absolute;
+                        top: -40px;
+                        right: 0;
+                        margin: 0;
+                        span{
+                            color: @white;
+                            &:before{
+                                display: inline-block;
+                                vertical-align: middle;
+                            }
+                        }
+                    } 
+                }
+                h2, p{
+                    padding: 0 80px;
+                    opacity: 0;
+                    transition: all .5s @easing 0s;
+                }
+                h2{
+                    font-size: 2.25em;
+                    text-transform: uppercase;
+                    font-weight: 700;
+                    padding-bottom: 40px;
+                }
+                .action-holder{
+                    width: 100%;
+                    margin-top: 40px;
+                    overflow: hidden;
+                    .progress-holder{
+                        width: 40%;
+                        height: 50px;
+                        float: left;
+                        overflow: hidden;
+                        & > p{
+                            font-size: 1em;
+                            text-transform: uppercase;
+                            color: @black;
+                            font-weight: 300;
+                            line-height: 30px;
+                            padding: 0;
+                            text-align: left;
+                            opacity: 0;
+                            transition: all .5s @easing 0s;
+                            span{
+                                display: inline-block;
+                                float: right;
+                                color: @gold;
+                                font-weight: 400;
+                            }
+                        }
+                        .progress{
+                            width: 100%;
+                            height: 20px;
+                            background: @black;
+                            border: 2px solid @black;
+                            position: relative;
+                            box-sizing: border-box;
+                            opacity: 0;
+                            transition: all .5s @easing .5s;
+                            overflow: hidden;
+                            &:before{
+                                display: block;
+                                width: 80%;
+                                height: 16px;
+                                position: absolute;
+                                top: 0px;
+                                left: 0px;
+                                content: "";
+                                background: @gold;
+                                transform: translateX(-100%);
+                                transition: all .5s @easing 1s;
+                                overflow: hidden;
+                            }
+                        }
+                    }
+                    .btn{
+                        float: right;
+                        span{
+                            opacity: 0;
+                            transition: all .5s @easing .5s;
+                        }
+                        svg > polygon{
+                            fill: transparent;
+                            stroke-width: 1px;
+                            stroke: @black;
+                            stroke-dasharray: 720px;
+                            stroke-dashoffset: 720px;
+                            transition: stroke-dashoffset .5s @easing 0s, fill .5s @easing .5s;
+                        }
+                        &:hover{
+                            span{
+                                color: @white;
+                            }
+                            svg > polygon{
+                                fill: @gold;
+                                stroke: @gold;
+                                transition: all .25s @easing 0s;
+                            }
+                        }
+                    }
+                }
+            }
+            & > .graphic-holder{
+                width: 280px;
+                height: auto;
+                position: absolute;
+                right: 40px;
+                bottom: 0;
+            }
+            &.reverse{
+                .info-holder{
+                    margin-left: 50%;
+                }
+                & > .graphic-holder{
+                    width: 360px;
+                    top: 50%;
+                    left: 40px;
+                    bottom: auto;
+                    right: auto;
+                } 
+            }
+            &:last-child{ margin-bottom: 80px; }
+            &.active{
+                .info-holder{
+                    .corner.corner-tl{
+                        .lane:before{ transform: translateX(0%); }
+                    }
+                    .label{
+                        span{ opacity: 1; }
+                        svg > polygon{
+                            fill: @black;
+                            stroke-dashoffset: 0px;
+                        }
+                    }
+                    h2, p{ opacity: 1; }
+                }
+                .action-holder{
+                    .progress-holder{
+                        & > p{ opacity: 1; }
+                        .progress{
+                            opacity: 1;
+                            &:before{ transform: translateX(0%); }
+                        }
+                    }
+                    .btn{
+                        span{ opacity: 1; }
+                        svg > polygon{
+                            fill: @black;
+                            stroke-dashoffset: 0px;
+                        }
+                    }
+                }
+            }
+        }
+    }
 }
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 /*  projects end                              */
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/*  team start                                */
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+.team-holder{
+    .bg-title-holder{
+        span{ text-align: right; }
+    }
+    .inner{
+        
+    }
+}
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/*  team end                                  */
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
