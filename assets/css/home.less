@@ -314,14 +314,6 @@
                     .lane{
                         background: transparent;
                         &:before{
-                            display: block;
-                            width: 100%;
-                            height: 100%;
-                            position: absolute;
-                            top: 0;
-                            left: 0;
-                            content: "";
-                            background: @black;
                             transform: translateX(-100%);
                             transition: all .5s @easing 0s;
                         }
@@ -420,25 +412,13 @@
                     }
                     .btn{
                         float: right;
-                        span{
-                            opacity: 0;
-                            transition: all .5s @easing .5s;
-                        }
-                        svg > polygon{
-                            fill: transparent;
-                            stroke-width: 1px;
-                            stroke: @black;
-                            stroke-dasharray: 720px;
-                            stroke-dashoffset: 720px;
-                            transition: stroke-dashoffset .5s @easing 0s, fill .5s @easing .5s;
-                        }
+                        opacity: 0;
+                        transition: all .5s @easing 0s;
+                        svg > polygon{ fill: @black; }
                         &:hover{
-                            span{
-                                color: @white;
-                            }
+                            span{ color: @white; }
                             svg > polygon{
                                 fill: @gold;
-                                stroke: @gold;
                                 transition: all .25s @easing 0s;
                             }
                         }
@@ -487,13 +467,7 @@
                             &:before{ transform: translateX(0%); }
                         }
                     }
-                    .btn{
-                        span{ opacity: 1; }
-                        svg > polygon{
-                            fill: @black;
-                            stroke-dashoffset: 0px;
-                        }
-                    }
+                    .btn{ opacity: 1; }
                 }
             }
         }
@@ -511,9 +485,219 @@
         span{ text-align: right; }
     }
     .inner{
-        
+        .item-holder{
+            width: 100%;
+            height: auto;
+            margin-bottom: 80px;
+            overflow: hidden;
+            .photo-holder{
+                width: 50%;
+                float: left;
+                position: relative;
+                padding: 0 80px;
+                box-sizing: border-box;
+                .photo{
+                    width: 100%;
+                    height: auto;
+                    position: relative;
+                    overflow: hidden;
+                    & > .lane{
+                        display: block;
+                        width: 100%;
+                        height: 2px;
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        background: @black;
+                        overflow: hidden;
+                        &:nth-child(1){
+                            transform: translateX(-100%) translateY(0%);
+                            transition: all .5s @easing;
+                        }
+                        &:nth-child(2){
+                            transition: all .5s @easing .5s;
+                            width: 2px;
+                            height: 100%;
+                            left: auto;
+                            right: 0;
+                            transform: translateX(0%) translateY(-100%);
+                        }
+                        &:nth-child(3){
+                            top: auto;
+                            bottom: 0;
+                            transition: all .5s @easing 1s;
+                            transform: translateX(100%) translateY(0%);
+                        }
+                        &:nth-child(4){
+                            width: 2px;
+                            height: 100%;
+                            transition: all .5s @easing 1.5s;
+                            transform: translateX(0%) translateY(100%);
+                        }
+                    }
+                }
+                .label{
+                    position: absolute;
+                    top: 40px;
+                    left: 0;
+                    span{
+                        color: @gold;
+                        opacity: 0;
+                        transition: all .5s @easing .5s;
+                    }
+                    svg > polygon{
+                        fill: transparent;
+                        stroke-width: 1px;
+                        stroke: @black;
+                        stroke-dasharray: 720px;
+                        stroke-dashoffset: 720px;
+                        transition: stroke-dashoffset .5s @easing 0s, fill .5s @easing .5s;
+                    }
+                }    
+            }
+            .info-holder{
+                width: 50%;
+                float: left;
+                position: relative;
+                overflow: hidden;
+                .corner{
+                    position: absolute;
+                    top: 40px;
+                    left: 0;
+                    .lane{
+                        &:before{
+                            transform: translateX(-100%);
+                            transition: all .5s @easing;
+                        }
+                    }
+                }
+                & > h2, 
+                & > p{
+                    opacity: 0;
+                    transition: all .5s @easing .5s;
+                }
+                & > h2{
+                    padding: 82px 40px 40px;
+                    font-size: 1.25em;
+                    font-weight: 700;
+                    text-transform: uppercase;
+                }
+                & > p{
+                    padding: 0 40px;
+                }
+                .numbers-holder{
+                    float: right;
+                    margin-top: 80px;
+                }
+            }
+            &.reverse{
+                .photo-holder,
+                .info-holder{
+                    float: right;
+                }
+            }
+            &:last-child{ margin-bottom: 0; }
+            &.active{
+                .photo-holder{
+                    .photo{
+                        & > .lane{
+                            transform: translateX(0%) translateY(0%);
+                        }
+                    }
+                    .label{
+                        span{
+                            opacity: 1;
+                        }
+                        svg > polygon{
+                            fill: @black;
+                            stroke-dashoffset: 0;
+                        }
+                    }
+                }
+                .info-holder{
+                    .corner{
+                        .lane{
+                            &:before{
+                                transform: translateX(0);
+                            }
+                        }
+                    }
+                    h2, p{
+                        opacity: 1;
+                    }
+                }
+            }
+        }
     }
 }
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 /*  team end                                  */
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/*  contact start                             */
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+.contact-holder{
+    .inner{
+        .upperline{
+            display: block;
+            width: 80px;
+            height: 2px;
+            margin: 0 auto;
+            background: @black;
+            overflow: hidden;
+        }
+        h2{
+            font-size: 2.25em;
+            font-weight: 700;
+            text-align: center;
+            text-transform: uppercase;
+            padding: 40px 40px 10px;
+        }
+        p{
+            padding: 0 40px;
+            text-align: center;
+        }
+        .buttons-holder{
+            width: 440px;
+            height: auto;
+            margin: 40px auto 80px;
+            overflow: hidden;
+            .btn{
+                float: left;
+                margin-right: 40px;
+                svg > polygon{
+                    fill: @black;
+                    transition: all .25s @easing;
+                }
+                &:last-child{
+                    margin-right: 0;
+                    svg > polygon{
+                        fill: @gold;
+                    }
+                }
+                &:hover{
+                    svg > polygon{
+                        fill: fade(@black, 80%);
+                    }
+                    &:last-child{
+                        svg > polygon{
+                            fill: fade(@gold, 80%);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/*  contact end                               */
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/*  adaptive start                            */
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/*  adaptive end                              */
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/

@@ -26,12 +26,12 @@ body,
     box-sizing: border-box;
     overflow: hidden;
 }
-/*body{
+body{
     overflow: hidden;
     &.__loaded{
         overflow: visible;
     }
-}*/
+}
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 /*  layout end                                */
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
@@ -44,7 +44,7 @@ body,
     position: absolute;
     top: 0;
     left: 0;
-    z-index: 10;
+    z-index: 20;
     overflow: hidden;
     .logo{
         width: 120px;
@@ -63,20 +63,29 @@ body,
             left: 0;
         }
     }
-    .langs-holder{
-        width: 60px;
-        height: auto;
-        float: right;
-        margin: 80px 80px 0 0;
-        overflow: hidden;
-        .btn-squared{
-            margin-top: 10px;
-            &:first-child{ margin-top: 0; }
-        }
-    }
 }
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 /*  header end                			      */
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/*  langs start                               */
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+#langs-holder{
+    width: 45px;
+    height: auto;
+    position: absolute;
+    top: 80px;
+    right: 80px;
+    z-index: 20;
+    overflow: hidden;
+    .btn-squared{
+        margin-top: 10px;
+        &:first-child{ margin-top: 0; }
+    }
+}
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/*  langs start                               */
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
@@ -323,6 +332,7 @@ body,
             left: 0;
             content: "";
             background: @black;
+            overflow: hidden;
         }
     }
     &.corner-br{
@@ -412,5 +422,57 @@ body,
 }
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 /*  preloader end                             */
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/*  footer start                              */
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+#footer{
+    width: 100%;
+    height: 240px;
+    background: url("@{images}/bg-logos.png") no-repeat -15% -600px, url("@{images}/bg-logos.png") no-repeat 112% -120px @black;
+    background-size: 500px auto, 500px auto;
+    position: relative;
+    overflow: hidden;
+    .upperline{
+        display: block;
+        width: 80px;
+        height: 2px;
+        margin: 80px auto 20px;
+        background: @white;
+        overflow: hidden;
+    }
+    & > a{
+        display: block;
+        margin-bottom: 10px;
+        text-align: center;
+        color: @white;
+    }
+    & > footer{
+        width: 100%;
+        height: 40px;
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        small{
+            display: block;
+            text-align: center;
+            font-size: .875em;
+            line-height: 40px;
+            color: @white;
+            a{
+                display: inline-block;
+                font-size: inherit;
+                color: inherit;
+                transition: all .25s @easing;
+                &:hover{
+                    color: @gold;
+                }
+            }
+        }
+    }
+}
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/*  footer end                                */
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 
