@@ -26,12 +26,12 @@ body,
     box-sizing: border-box;
     overflow: hidden;
 }
-body{
+/*body{
     overflow: hidden;
     &.__loaded{
         overflow: visible;
     }
-}
+}*/
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 /*  layout end                                */
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
@@ -476,3 +476,218 @@ body{
 /*  footer end                                */
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/*  adaptive start                            */
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+@media only screen and @notebook{
+    
+    .inner{ padding: 212px 160px 0; }
+
+}
+
+@media only screen and @tablet{
+    
+    .inner{ padding: 120px 80px 0; }
+
+    #header .logo{ margin: 40px 0 0 40px; }
+    
+    #langs-holder{
+        top: 40px;
+        right: 40px;
+    }
+    
+    #social-holder{
+        width: 45px;
+        position: absolute;
+        left: 40px;
+        bottom: 40px;
+    }
+
+    .switch-project-holder{
+        .label-small{
+            height: 45px;
+            span{
+                font-size: 1em;
+                line-height: 45px;
+            }
+        }
+    }
+
+    .bg-title-holder{
+        & > span{
+            padding: 40px 40px 0;
+            font-size: 10em;
+        }
+    }
+
+    .btn{
+        width: 180px;
+        height: 45px;
+        & > span,
+        & > a{
+            font-size: .875em;
+            line-height: 45px;
+            font-weight: 300;
+        }
+    }
+
+    .label{
+        width: 240px;
+        height: 35px;
+        & > a,
+        & > span{
+            font-size: .875em;
+            line-height: 35px;
+        }
+    }
+    
+    .corner{
+        width: 80px;
+        height: 80px;
+    }
+    
+    #footer{
+        background: url("@{images}/bg-logos.png") no-repeat -50% -450px, url("@{images}/bg-logos.png") no-repeat 146% -100px @black;
+        background-size: 400px auto, 400px auto;
+    }
+
+}
+
+@media only screen and @mobileL{
+
+    .bg-title-holder{
+        & > span{
+            font-size: 7.5em;
+        }
+    }
+
+}
+
+@media only screen and @mobileM{
+
+    .inner{ padding: 80px 20px 0; }
+
+    #header{
+        .logo{
+            width: 80px;
+            margin: 40px 0 0 40px;
+            a{
+                width: 80px;
+                height: auto;
+            }
+        }
+    }
+    
+    #langs-holder{
+        width: 110px;
+        top: 40px;
+        right: 40px;
+        .btn-squared{
+            width: 30px;
+            height: 30px;
+            float: left;
+            margin: 0 0 0 10px;
+            &:first-child{ margin: 0; }
+            a{
+                font-size: 1em;
+                line-height: 30px;
+            }
+            svg{ display: none; }
+        }
+    }
+    
+    #social-holder{
+        width: 30px;
+        .btn-squared{
+            width: 30px;
+            height: 30px;
+            a{
+                font-size: 1.25em;
+                line-height: 30px;
+                &:before{
+                    display: inline-block;
+                    vertical-align: middle;
+                }
+            }
+            svg{ display: none; }
+        }
+    }
+
+    .switch-project-holder{
+        width: 170px;
+        margin: 40px auto 0;
+        .label.label-small{
+            width: 100%;
+            height: 35px;
+            margin-bottom: 10px;
+            span{ line-height: 35px; }
+        }
+        .btn.btn-squared{
+            width: 50px;
+            height: 50px;
+            margin-right: 10px;
+            a{ line-height: 47px; }
+        }
+    }
+    
+    .numbers-holder{
+        width: 280px;
+        .item{
+            width: 80px;
+            margin-right: 20px;
+            .lane{
+                width: 20px;
+                margin-bottom: 10px;
+            }
+            .number{ font-size: 3.5em; }
+        }
+    }
+
+    .bg-title-holder{
+        & > span{
+            padding: 40px 20px 0;
+            font-size: 5.5em;
+        }
+    }
+    
+    .btn{
+        width: 160px;
+        height: 40px;
+        & > span,
+        & > a{
+            font-size: .875em;
+            line-height: 40px;
+        }
+    }
+
+    .label{
+        width: 200px;
+        height: 30px;
+        & > a,
+        & > span{
+            font-size: .75em;
+            line-height: 30px;
+        }
+        svg > polygon{
+            fill: fade(@gold, 40%);
+        }
+        &.label-small{
+            width: 220px;
+        }
+        &.label-squared{
+            width: 40px;
+            height: 40px;
+            span{
+                color: @gold;
+                line-height: 40px;
+            }
+            svg > polygon{
+                fill: @black;
+            }
+        }
+    }
+
+}
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/*  adaptive end                              */
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
