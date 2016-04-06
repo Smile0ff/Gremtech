@@ -26,12 +26,6 @@ body,
     box-sizing: border-box;
     overflow: hidden;
 }
-/*body{
-    overflow: hidden;
-    &.__loaded{
-        overflow: visible;
-    }
-}*/
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 /*  layout end                                */
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
@@ -368,7 +362,7 @@ body,
 /*  preloader start                           */
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 #preloader-holder{
-    display: none;
+    display: block;
     width: 100%;
     height: 100%;
     position: fixed;
@@ -425,6 +419,64 @@ body,
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/*  landscape start                           */
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+#landscape-holder{
+    display: none;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: @black url("@{images}/hero-bg.jpg") no-repeat 50% 50%;
+    background-size: cover;
+    overflow: hidden;
+    .circle{
+        width: 160px;
+        height: 160px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin: -80px 0 0 -80px;
+        box-shadow: 2px 2px 3px 0 fade(@gold, 40%);
+        border-radius: 50%;
+        animation: rotation-left 3s linear 0s infinite;
+        &.small{
+            width: 80px;
+            height: 80px;
+            margin: -40px 0 0 -40px;
+            transform: rotate(180deg);
+            animation: rotation-right 3s linear 0s infinite;
+        }
+    }
+    .label{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translateX(-50%) translateY(-50%);
+        span{
+            font-size: .875em;
+            color: @gold;
+        }
+        svg > polygon{
+            fill: @black;
+        }
+    }
+}
+
+@keyframes rotation-left{
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(-360deg); }
+}
+@keyframes rotation-right{
+    0% { transform: rotate(180deg); }
+    100% { transform: rotate(540deg); }
+}
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/*  landscape end                             */
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 /*  footer start                              */
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 #footer{
@@ -450,15 +502,13 @@ body,
     }
     & > footer{
         width: 100%;
-        height: 40px;
         position: absolute;
         left: 0;
-        bottom: 0;
+        bottom: 20px;
         small{
             display: block;
             text-align: center;
             font-size: .875em;
-            line-height: 40px;
             color: @white;
             a{
                 display: inline-block;
@@ -561,9 +611,19 @@ body,
         }
     }
 
+    #preloader-holder{
+        .loader{
+            width: 160px;
+            height: 112px;
+            margin: -56px 0 0 -80px;
+        }
+    }
+
 }
 
 @media only screen and @mobileM{
+    
+    p, a{ font-size: .875em; }
 
     .inner{ padding: 80px 20px 0; }
 
@@ -646,7 +706,7 @@ body,
     .bg-title-holder{
         & > span{
             padding: 40px 20px 0;
-            font-size: 5.5em;
+            font-size: 4.75em;
         }
     }
     
@@ -668,23 +728,91 @@ body,
             font-size: .75em;
             line-height: 30px;
         }
-        svg > polygon{
-            fill: fade(@gold, 40%);
+    }
+    
+    #footer{
+        height: 200px;
+        background: @black;
+        .upperline{
+            margin-top: 40px;
         }
-        &.label-small{
-            width: 220px;
+    }
+
+}
+
+
+@media only screen and @mobileS{
+
+    .inner{ padding: 40px 20px 0; }
+    
+    #header{
+        .logo{
+            margin: 60px auto 0;
+            float: none;
         }
-        &.label-squared{
+    }
+
+    #langs-holder{
+        width: 90px;
+        top: 20px;
+        right: 20px;
+        .btn-squared{
+            margin: 0;
+            a{ font-size: .875em; }
+        }
+    }
+
+    #social-holder{
+        width: 60px;
+        top: 20px;
+        left: 20px;
+        bottom: auto;
+        .btn-squared{
+            float: left;
+            margin-top: 0;
+            a{
+                font-size: 1em;
+                line-height: 30px;
+            }
+        }
+    }
+
+    .switch-project-holder{
+        width: 140px;
+        .label.label-small{
+            height: 28px;
+            span{
+                font-size: .875em;
+                line-height: 29px;
+            }
+        }
+        .btn.btn-squared{
             width: 40px;
             height: 40px;
-            span{
-                color: @gold;
-                line-height: 40px;
-            }
-            svg > polygon{
-                fill: @black;
-            }
+            a{ line-height: 37px; }
         }
+    }
+
+    .numbers-holder{
+        width: 260px;
+        .item{
+            margin-right: 10px;
+            .number{ font-size: 3em; }
+            p{ font-size: .75em; }
+        }
+    }
+    
+    .bg-title-holder{
+        display: none;
+    }
+
+}
+
+@media only screen and @landscape{
+
+    #page{ display: none; }
+    #landscape-holder{
+        display: block;
     }
 
 }

@@ -654,28 +654,6 @@
 				</footer>
 			</div>
 		</main>
-		<!--div class="btn">
-		    <svg viewBox="0 0 200 50">
-		        <polygon class="rect-large" points="0,15 15,0 200,0 200,35 185,50 0,50 "/>
-		    </svg>
-		</div>
-
-		<div class="btn-squared">
-		    <svg viewBox="0 0 60 60">
-		        <polygon points="0,60 0,10 10,0 60,0 60,50 50,60 "/>
-		    </svg>
-		</div>
-		<div class="label">
-		    <svg viewBox="0 0 300 45">
-		        <polygon points="0,10 10,0 300,0 300,35 290,45 0,45 "/>
-		    </svg>
-		</div
-		<div class="label small">
-			<svg viewBox="0 0 220 45">
-				<polygon points="0,10 10,0 220,0 220,35 210,45 0,45 "/>
-			</svg>
-		</div>
-		-->
 		<div id="preloader-holder">
 			<div class="loader">
 				<svg viewBox="0 0 126 88">
@@ -698,7 +676,17 @@
 			</div>
 		</div>
 	</div>
-	<script src="jspm_packages/system.js"></script>
+	<div id="landscape-holder">
+		<div class="circle"></div>
+		<div class="circle small"></div>
+		<div class="label">
+			<span>Ожидание переворота экрана</span>
+		    <svg viewBox="0 0 300 45">
+		        <polygon points="0,10 10,0 300,0 300,35 290,45 0,45 "/>
+		    </svg>
+		</div>
+	</div>
+	<!--script src="jspm_packages/system.js"></script>
 	<script src="jspm.config.js"></script>
 	<script>
 		var body = document.querySelector("body");
@@ -712,7 +700,7 @@
 		}, false);
 
 		System.import("assets/js/home");
-	</script>
-	<!--script src="build/js/home.bundle.min.js"></script-->
+	</script-->
+	<script src="build/js/home.bundle.min.js"></script>
 </body>
 </html>
