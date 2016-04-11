@@ -14,6 +14,10 @@ class Loader{
             $("body").addClass("__loaded");
         }, 3000);
 
+        window.setTimeout(function(){
+            window.scrollTo(0, 0);
+        }, 100);
+
         return false;
     }
 }
