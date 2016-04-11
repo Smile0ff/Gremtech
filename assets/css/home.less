@@ -396,7 +396,7 @@
                             opacity: 0;
                             transition: all .5s @easing .5s;
                             overflow: hidden;
-                            &:before{
+                            & > .progress-bar{
                                 display: block;
                                 width: 80%;
                                 height: 16px;
@@ -465,7 +465,7 @@
                         & > p{ opacity: 1; }
                         .progress{
                             opacity: 1;
-                            &:before{ transform: translateX(0%); }
+                            & > .progress-bar{ transform: translateX(0%); }
                         }
                     }
                     .btn{ opacity: 1; }
@@ -587,8 +587,19 @@
                     padding: 0 40px;
                 }
                 .numbers-holder{
+                    width: 410px;
                     float: right;
                     margin-top: 80px;
+                    .number{
+                        width: 110px;
+                        font-size: 4.5em;
+                        & > span{
+                            display: inline-block;
+                            vertical-align: middle;
+                            font-size: .35em;
+                            margin-top: -10px;
+                        }
+                    }
                 }
             }
             &.reverse{
@@ -698,6 +709,15 @@
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 /*  adaptive start                            */
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+@media only screen and @notebook{
+
+    .team-holder{
+        .inner{
+            .item-holder .photo-holder .label{ top: 20px; }
+        }
+    }
+
+}
 @media only screen and @tablet{
     
     .hero-holder{
@@ -818,7 +838,7 @@
     .team-holder{
         .inner{
             .item-holder{
-                margin-bottom: 80px;
+                margin-bottom: 40px;
                 .photo-holder{
                     width: 100%;
                     float: none;   
@@ -846,7 +866,7 @@
                     }
                     & > p{ padding: 0 40px; }
                     .numbers-holder{
-                        margin-top: 120px;
+                        margin-top: 80px;
                     }
                 }
                 &.reverse{
@@ -1006,7 +1026,20 @@
                     }
                     & > p{ padding: 0 40px; }
                     .numbers-holder{
+                        width: 100%;
+                        padding: 0 40px;
+                        box-sizing: border-box;
                         margin-top: 80px;
+                        .item{
+                            width: 33.33333333333333%;
+                            margin-right: 0;
+                            padding-right: 10px;
+                            box-sizing: border-box;
+                            .number{
+                                width: 100%;
+                                font-size: 3.5em;
+                            }
+                        }
                     }
                 }
             }
@@ -1158,7 +1191,12 @@
                     }
                     & > p{ padding: 0; }
                     .numbers-holder{
-                        margin: 80px 0 40px;
+                        padding: 0;
+                        .item{
+                            .number{
+                                font-size: 3em;
+                            }
+                        }
                     }
                 }
             }
