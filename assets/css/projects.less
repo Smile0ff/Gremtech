@@ -1,13 +1,5 @@
 @import "components/common.less";
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
-/*  layout start                              */
-/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
-
-/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
-/*  layout end                                */
-/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
-
-/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 /*  intro start                               */
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 .hero-holder{
@@ -522,30 +514,265 @@
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 /*  adaptive start                            */
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
-@media only screen and @notebook{
-
-    
-
-}
-
 @media only screen and @tablet{
+    
+    .bg-title-holder > span{ font-size: 8em; }
 
+    .hero-holder{
+        background: url("@{images}/hero-bg.jpg") no-repeat 50% 50%;
+        background-size: cover;
+        .corner{
+            right: 40px;
+            bottom: 40px;
+        }
+        .arrow-holder{ bottom: 40px; }
+    }
+
+    .about-holder{
+        .inner{
+            .info-holder{
+                .label{
+                    top: 0;
+                    left: auto;
+                    right: 0;
+                }
+                h2{ padding: 40px 40px 0; }
+                p{ padding: 20px 40px; }
+            }
+        }
+    }
+
+    .functionality-holder{
+        .bg-title-holder{
+            span{ text-align: right; }
+        }
+        .inner{
+            .desc-holder{ width: 100%; }
+            .items-holder{
+                margin: 40px auto 0;
+                .item{
+                    width: 100%;
+                    height: auto;
+                    padding-top: 0;
+                    float: none;
+                    margin: 0 0 20px 0;
+                    .info{
+                        position: relative;
+                        top: 0;
+                        transform: translateY(0%);
+                        .num-holder{ margin: 20px auto 0; }
+                    }
+                }
+            }
+        }
+    }
+
+    .v-touch .functionality-holder{
+        .inner{
+            .items-holder{
+                .item{
+                    width: 100%;
+                    height: auto;
+                    padding-top: 0%;
+                    float: none;
+                    margin: 0 0 20px 0;
+                }
+            }
+        }
+    }
+    
+    .market-scope-holder{
+        .inner{
+            .desc-holder{
+                width: 100%;
+                margin-left: 0;
+            }
+            .list-holder{
+                display: block;
+                width: 100%;
+                margin: 80px 0 0;
+                li{
+                    p{ font-size: 1em; }
+                }
+            }
+        }
+    }
+
+    .contact-holder{
+        .inner{
+            p{ padding: 20px 0 0; }
+            .buttons-holder{
+                width: 400px;
+                .btn{ margin-right: 40px; }
+            }
+        }
+    }
 
 }
 
 @media only screen and @mobileL{
+    
+    .bg-title-holder > span{ font-size: 4em; }
 
+    .hero-holder{
+        .inner{
+            top: 50%;
+            h1{
+                font-size: 5.5em;
+                line-height: 90px;
+            }
+            p{
+                font-size: .875em;
+                padding: 0 20px;
+            }
+        }
+        .lowpoly-holder{ display: none; }
+        .corner{
+            .lane{ width: 40px; }
+        }
+    }
 
-}
+    .about-holder{
+        .inner{
+            .info-holder{
+                .corner{ display: none; }
+                h2{
+                    font-size: 1.5em;
+                    padding: 50px 20px 10px;
+                }
+                p{ padding: 0 20px; }
+                .progress-holder{ margin-top: 20px; }
+            }
+        }
+    }
 
-@media only screen and @mobileM{
+    .market-scope-holder{
+        .inner{
+            .desc-holder{
+                width: 100%;
+                margin-left: 0;
+            }
+            .list-holder{
+                display: block;
+                width: 100%;
+                margin: 40px 0 0;
+                li{
+                    height: 60px;
+                    .num-holder{ display: none; }
+                    p{
+                        font-size: 1em;
+                        line-height: 60px;
+                        margin: 0;
+                    }
+                }
+            }
+        }
+    }
 
+    .contact-holder{
+        .inner{
+            h2{
+                font-size: 1.5em;
+                padding: 0 20px 10px;
+            }
+            p{ padding: 0; }
+            .buttons-holder{
+                width: 340px;
+                .btn{ margin-right: 20px; }
+            }
+        }
+    }
     
 }
 
 @media only screen and @mobileS{
 
+    .hero-holder{
+        .inner{
+            top: 55%;
+            h1{
+                font-size: 4.75em;
+                line-height: 80px;
+            }
+        }
+        .corner{ display: none; }
+    }
     
+    .about-holder{
+        .inner{
+            .info-holder{
+                .corner{ display: none; }
+                .label{
+                    position: relative;
+                    top: auto;
+                    left: auto;
+                }
+                h2{ padding: 20px 0 10px; }
+                p{ padding: 0; }
+                .progress-holder{
+                    width: 100%;
+                    height: 40px;
+                    float: none;
+                    margin-bottom: 20px;
+                    p{
+                        font-size: .875em;
+                        line-height: 20px;
+                    }
+                }
+            }
+        }
+    }
+    
+    .market-scope-holder{
+        .inner{
+            .desc-holder{
+                width: 100%;
+                margin-left: 0;
+            }
+            .list-holder{
+                display: block;
+                width: 100%;
+                margin: 40px 0 0;
+                li{
+                    height: auto;
+                    margin-bottom: 20px;
+                    text-align: center;
+                    &:after{ display: none; }
+                    .num-holder{
+                        display: block;
+                        position: relative;
+                        top: 0;
+                        left: 0;
+                        margin: 0 auto;
+                    }
+                    p{
+                        font-size: .875em;
+                        line-height: 16px;
+                        margin: 0;
+                        padding: 10px 20px 0;
+                        text-align: center;
+                        color: @gold;
+                        &:before{ display: none; }
+                    }
+                }
+            }
+        }
+    }
+
+    .contact-holder{
+        .inner{
+            .buttons-holder{
+                width: 100%;
+                margin: 20px 0 40px;
+                .btn{
+                    float: none;
+                    margin: 0 auto 10px;
+                    &:last-child{ margin: 0 auto; }
+                }
+            }
+        }
+    }
+
 }
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 /*  adaptive end                              */
