@@ -5,12 +5,12 @@ import "jquery-validation";
 import "jquery-mask-plugin";
 
 import Loader from "./lib/loader";
-import InvestmentController from "./controllers/investmentController";
+import FeedbackController from "./controllers/feedbackController";
 
 new Loader();
 
 $(() => {
 
-    new InvestmentController();
+    new FeedbackController();
     $("form").validate({ignore: ""});
 });

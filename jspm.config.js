@@ -17,7 +17,6 @@ System.config({
     "babel": "npm:babel-core@5.8.35",
     "babel-runtime": "npm:babel-runtime@5.8.35",
     "core-js": "npm:core-js@1.2.6",
-    "fetch": "github:github/fetch@0.11.0",
     "jquery": "npm:jquery@2.2.3",
     "jquery-mask-plugin": "npm:jquery-mask-plugin@1.14.0",
     "jquery-validation": "github:jzaefferer/jquery-validation@1.15.0",

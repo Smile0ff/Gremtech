@@ -32,7 +32,7 @@
 	<link rel="icon" type="image/png" href="assets/images/favicons/96x96.png">
 	<link rel="icon" type="image/png" href="assets/images/favicons/160x160.png">
 	<link rel="icon" type="image/png" href="assets/images/favicons/192x192.png">
-	<link rel="stylesheet" href="build/css/investment.bundle.min.css">
+	<link rel="stylesheet" href="build/css/feedback.bundle.min.css">
 </head>
 <body>
 	<div id="page">
@@ -62,9 +62,9 @@
 			</div>
 		</header>
 		<main id="content">
-			<section class="investment-holder">
+			<section class="feedback-holder">
 				<div class="bg-title-holder">
-					<span>part of it</span>
+					<span>Connection</span>
 				</div>
 				<div class="inner">
 					<div class="info-holder">
@@ -73,67 +73,31 @@
 							<span class="lane"></span>
 						</div>
 						<div class="label">
-							<span>Инвестиция в проект</span>
+							<span>Связь с gremtech</span>
 							<svg viewBox="0 0 300 45">
 						        <polygon points="0,10 10,0 300,0 300,35 290,45 0,45 "/>
 						    </svg>
 						</div>
-						<h1>Инвестиционная форма</h1>
-						<form action="php/investment.php" method="POST" id="investment-form">
-							<div id="response-holder">
-								
+						<h1>Форма связи</h1>
+						<form action="php/feedback.php" method="POST" id="feedback-form">
+							<div id="response-holder"></div>
+							<div class="field-holder">
+								<input type="text" name="feedback[name]" value="" placeholder="Введите имя" id="feedback-name" data-rule-required="true" data-msg-required="Поле должно быть заполнено">
 							</div>
 							<div class="field-holder">
-								<input type="text" name="investment[name]" value="" placeholder="Введите имя" id="investment-name" data-rule-required="true" data-msg-required="Поле должно быть заполнено">
+								<input type="text" name="feedback[theme]" value="" placeholder="Укажите тему письма" id="feedback-theme" data-rule-required="true" data-msg-required="Поле должно быть заполнено">
 							</div>
 							<div class="field-holder">
-								<input type="tel" name="investment[phone]" value="" placeholder="Введите номер телефона" id="investment-phone" data-mask="+38 (999) 999 99 99">
+								<input type="tel" name="feedback[phone]" value="" placeholder="Введите номер телефона" id="feedback-phone" data-mask="+38 (999) 999 99 99">
 							</div>
 							<div class="field-holder">
-								<input type="email" name="investment[email]" value="" placeholder="Введите электронный адрес" id="investment-email" data-rule-required="true" data-msg-required="Поле должно быть заполнено" data-rule-email="true" data-msg-email="Введите корректный адрес почты">
-							</div>
-							<p>Выберите проект для инвестиции</p>
-							<div class="field-holder">
-								<input type="radio" name="investment[project]" value="v-touch" id="investment-v-touch" data-rule-required="true" data-msg-required="Вы не выбрали проект">
-								<label for="investment-v-touch">
-									<div class="check">
-										<span class="icon icon-hand"></span>
-										<svg viewBox="0 0 60 60">
-									        <polygon points="0,60 0,10 10,0 60,0 60,50 50,60"></polygon>
-									    </svg>
-									</div>
-									<span class="title">Проект V-Touch</span>
-								</label>
+								<input type="email" name="feedback[email]" value="" placeholder="Введите электронный адрес" id="feedback-email" data-rule-required="true" data-msg-required="Поле должно быть заполнено" data-rule-email="true" data-msg-email="Введите корректный адрес почты">
 							</div>
 							<div class="field-holder">
-								<input type="radio" name="investment[project]" value="v-reflection" id="investment-v-reflection" data-rule-required="true" data-msg-required="Вы не выбрали проект">
-								<label for="investment-v-reflection">
-									<div class="check">
-										<span class="icon icon-arm"></span>
-										<svg viewBox="0 0 60 60">
-									        <polygon points="0,60 0,10 10,0 60,0 60,50 50,60"></polygon>
-									    </svg>
-									</div>
-									<span class="title">Проект V-Reflection</span>
-								</label>
-							</div>
-							<div class="field-holder">
-								<input type="radio" name="investment[project]" value="telekinez-sys" id="investment-telekinez-sys" data-rule-required="true" data-msg-required="Вы не выбрали проект">
-								<label for="investment-telekinez-sys">
-									<div class="check">
-										<span class="icon icon-brain"></span>
-										<svg viewBox="0 0 60 60">
-									        <polygon points="0,60 0,10 10,0 60,0 60,50 50,60"></polygon>
-									    </svg>
-									</div>
-									<span class="title">Проект Telekinez-Sys</span>
-								</label>
-							</div>
-							<div class="field-holder">
-								<textarea name="investment[message]" placeholder="Дополнительная информация" id="investment-message"></textarea>
+								<textarea name="feedback[message]" placeholder="Дополнительная информация" id="feedback-message" data-rule-required="true" data-msg-required="Поле должно быть заполнено"></textarea>
 							</div>
 							<button type="submit">
-								<span>Инвестировать</span>
+								<span>Написать</span>
 								<svg viewBox="0 0 200 50">
 							        <polygon class="rect-large" points="0,15 15,0 200,0 200,35 185,50 0,50 "></polygon>
 							    </svg>
@@ -195,8 +159,8 @@
 
 		}, false);
 
-		System.import("assets/js/investment");
+		System.import("assets/js/feedback");
 	</script-->
-	<script src="build/js/investment.bundle.min.js"></script>
+	<script src="build/js/feedback.bundle.min.js"></script>
 </body>
 </html>

@@ -2,12 +2,12 @@
 
 import Cookies from "../lib/cookies";
 
-let form = $("#investment-form");
+let form = $("#feedback-form");
 let loaderHolder = $("#loader-holder");
 let responseHolder = $("#response-holder");
 let token = Cookies.get("csrftoken");
 
-class InvestmentController{
+class FeedbackController{
 
     constructor(){
         this._events();
@@ -17,9 +17,9 @@ class InvestmentController{
     }
     _handleForm(e){
         e.preventDefault();
-        
+
         if(!form.valid()) return;
-        
+
         loaderHolder.addClass("active");
         responseHolder.removeClass().empty();
 
@@ -34,8 +34,8 @@ class InvestmentController{
         })
         .done((response) => {
             response = JSON.parse(response);
-            responseHolder.addClass("success").html(`<p>${response.message}</p>`);
 
+            responseHolder.addClass("success").html(`<p>${response.message}</p>`);
             form[0].reset();
         })
         .fail((response) => {
@@ -52,6 +52,7 @@ class InvestmentController{
             `);
         })
         .always(() => {
+            
             loaderHolder.removeClass("active");
             window.scrollTo(0, 0);
 
@@ -59,7 +60,8 @@ class InvestmentController{
                 responseHolder.removeClass().empty();
             }, 5000);
         });
+        
     }
 }
 
-export default InvestmentController;
+export default FeedbackController;
