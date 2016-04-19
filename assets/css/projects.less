@@ -88,18 +88,18 @@
 .v-reflection .hero-holder{
     .lowpoly-holder{
         width: 22%;
-        left: 0%;
+        left: -2%;
         transform: translateX(0%) translateY(-50%);
         &.right{
             top: 60%;
             left: auto;
-            right: 0;
+            right: -2%;
         }
     }
 }
 .telekinez-sys .hero-holder{
     .lowpoly-holder{
-        top: 36%;
+        top: 40%;
     }
 }
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
@@ -514,6 +514,24 @@
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 /*  adaptive start                            */
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+@media only screen and @notebook{
+    
+    .v-touch .hero-holder{
+        .lowpoly-holder{
+            width: 340px;
+            top: 38%;
+        }
+    }
+
+    .telekinez-sys .hero-holder{
+        .lowpoly-holder{
+            width: 300px;
+            top: 36%;
+        }
+    }
+
+}
+
 @media only screen and @tablet{
     
     .bg-title-holder > span{ font-size: 8em; }
@@ -795,7 +813,10 @@
         .inner{
             top: 50%;
             .upperline{ display: none; }
-            h1{ line-height: 90px; }
+            h1{
+                font-size: 4.5em;
+                line-height: 80px;
+            }
             p{
                 font-size: .875em;
                 padding: 0 40px;
@@ -898,7 +919,10 @@
 
     .hero-holder{
         .inner{
-            h1{ line-height: 80px; }
+            h1{
+                font-size: 3.5em;
+                line-height: 60px;
+            }
             p{ font-size: .75em; }
         }
     }
